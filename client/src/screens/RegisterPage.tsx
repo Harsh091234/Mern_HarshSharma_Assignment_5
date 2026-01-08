@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { useRegisterUserMutation } from "../services/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

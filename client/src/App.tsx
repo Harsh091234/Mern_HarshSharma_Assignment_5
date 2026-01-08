@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { Route, Routes } from 'react-router-dom'
 
 import RegisterPage from './screens/RegisterPage';
 import LoginPage from './screens/LoginPage';
-import { Homepage } from './screens/Homepage';
+import Homepage from './screens/Homepage';
 
 const App = () => {
   return (

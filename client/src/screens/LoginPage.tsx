@@ -39,7 +39,7 @@ const LoginPage = () => {
         </h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-          {/* Email */}
+     
           <div>
             <label className="block text-gray-700 mb-1">Email</label>
             <input
@@ -54,7 +54,6 @@ const LoginPage = () => {
             )}
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-gray-700 mb-1">Password</label>
             <input
@@ -70,7 +69,7 @@ const LoginPage = () => {
             )}
           </div>
 
-          {/* Submit */}
+      
           <button
             type="submit"
             disabled={isLoading}
@@ -79,12 +78,11 @@ const LoginPage = () => {
             {isLoading ? "Logging in..." : "Login"}
           </button>
 
-          {/* Server Error */}
+
           {serverError && (
             <p className="text-red-500 text-center mt-2">{serverError}</p>
           )}
 
-          {/* Redirect to Register */}
           <p className="text-sm text-gray-600 text-center ">
             Don’t have an account?{" "}
             <button

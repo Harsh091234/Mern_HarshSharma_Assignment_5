@@ -1,10 +1,10 @@
 
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+
 import { useGetAuthUserQuery } from "../services/api";
 
 
-export const Homepage = () => {
+const Homepage = () => {
    const navigate = useNavigate();
 
   const {
@@ -16,7 +16,7 @@ export const Homepage = () => {
   const user = data?.user;
   
   console.log("user", user)
-  // 🔐 Redirect if not authenticated
+ 
 
 
   if (isLoading || !user) {
@@ -27,7 +27,9 @@ export const Homepage = () => {
     );
   }
 
-  if(isError) return navigate("/login");
+    if (!user) {
+      return null;
+    }
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-10">
@@ -36,7 +38,7 @@ export const Homepage = () => {
           Dashboard
         </h1>
 
-        {/* User Info */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <p  >{user.username}</p>
           <p  >{user.email}</p>
@@ -44,11 +46,12 @@ export const Homepage = () => {
           <p  >{user._id}</p>
         </div>
 
-        {/* Actions */}
+       
        
       </div>
     </div>
   );
 }
 
+export default Homepage;
 
