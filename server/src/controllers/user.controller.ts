@@ -86,12 +86,12 @@ export const loginUser = async (req: Request, res: Response) => {
     });
 
     const accessToken = generateAccessTokenAndSetCookie(user._id, res);
-
+const userObj = user.toObject();
 
     res.status(201).json({
       success: true,
       user: {
-        ...user._doc,
+        ...userObj,
         password: undefined
       },
       message: "User logined successfully",
