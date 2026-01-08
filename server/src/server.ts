@@ -28,8 +28,15 @@ app.use("/api/user", userRoutes);
 
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/dist")));
-  app.get(/.*/, (req, res) => {
+ 
+ const a= app.use(express.static(path.join(__dirname, "../client/dist")));
+const clientPath = path.join(__dirname, "../client/dist");
+
+console.log("📁 Client dist path:", clientPath);
+
+app.use(express.static(clientPath));
+
+  app.get(/.*/, (_, res) => {
     res.sendFile(path.join(__dirname, "../client", "dist", "index.html"));
   });
 }

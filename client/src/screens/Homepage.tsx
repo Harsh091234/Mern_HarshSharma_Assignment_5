@@ -1,6 +1,7 @@
 
 
 
+import { Navigate } from "react-router-dom";
 import { useGetAuthUserQuery } from "../services/api";
 
 
@@ -19,7 +20,7 @@ const Homepage = () => {
  
 
 
-  if (isLoading || !user) {
+  if (isLoading ) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-600 text-lg">Loading dashboard...</p>
@@ -28,7 +29,7 @@ const Homepage = () => {
   }
 
     if (!user) {
-      return null;
+      return <Navigate to={"/login"} replace />;
     }
 
   return (
