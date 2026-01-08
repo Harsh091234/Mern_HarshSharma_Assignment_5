@@ -5,12 +5,12 @@ import { useGetAuthUserQuery } from "../services/api";
 
 
 const Homepage = () => {
-   const navigate = useNavigate();
+  
 
   const {
     data,
     isLoading,
-    isError,
+ 
   
   } = useGetAuthUserQuery();
   const user = data?.user;
